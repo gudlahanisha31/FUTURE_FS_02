@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="login">
+  <main class="page-shell login-shell">
+    <section class="login-card">
+      <div class="brand-mark">
+        <div class="brand-icon">CL</div>
+        <div>
+          <h1>Client Leads</h1>
+          <p>Secure access to your CRM dashboard.</p>
+        </div>
+      </div>
+      <form id="loginForm" class="login-form">
+        <label>
+          Email
+          <input type="email" placeholder="you@example.com" required />
+        </label>
+        <label>
+          Password
+          <input type="password" placeholder="Enter password" required />
+        </label>
+        <button type="submit" class="primary-btn">Sign In</button>
+      </form>
+      <p class="small-text">This is a demo login. Signing in redirects to the dashboard.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

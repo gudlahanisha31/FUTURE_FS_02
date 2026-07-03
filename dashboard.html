@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="dashboard">
+  <header class="dashboard-header">
+    <div>
+      <p class="eyebrow">CRM Dashboard</p>
+      <h1>Lead Management</h1>
+    </div>
+    <button id="logoutBtn" class="secondary-btn">Logout</button>
+  </header>
+
+  <div id="statusToast" class="status-toast hidden" aria-live="polite"></div>
+  <section class="dashboard-grid">
+    <div class="card stats-card">
+      <p class="card-title">Lead Statistics</p>
+      <div class="stats-grid">
+        <div class="stat-block">
+          <span class="stat-value" id="totalLeads">0</span>
+          <span class="stat-label">Total Leads</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-value" id="activeLeads">0</span>
+          <span class="stat-label">Active</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-value" id="contactedLeads">0</span>
+          <span class="stat-label">Contacted</span>
+        </div>
+        <div class="stat-block">
+          <span class="stat-value" id="wonLeads">0</span>
+          <span class="stat-label">Won</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card table-card">
+      <div class="table-header">
+        <div>
+          <input id="searchInput" type="search" placeholder="Search leads" />
+          <select id="statusFilter">
+            <option value="all">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Proposal">Proposal</option>
+            <option value="Won">Won</option>
+          </select>
+        </div>
+        <button id="addLeadBtn" class="primary-btn">Add Lead</button>
+      </div>
+      <div class="table-scroll">
+        <table class="lead-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Company</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="leadTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <div id="leadModal" class="modal hidden">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <h2>Add a New Lead</h2>
+        <button id="closeModal" class="icon-button" aria-label="Close">×</button>
+      </div>
+      <form id="leadForm" class="modal-form">
+        <label>
+          Name
+          <input type="text" id="leadName" required />
+        </label>
+        <label>
+          Company
+          <input type="text" id="leadCompany" required />
+        </label>
+        <label>
+          Email
+          <input type="email" id="leadEmail" required />
+        </label>
+        <label>
+          Phone
+          <input type="tel" id="leadPhone" required />
+        </label>
+        <label>
+          Status
+          <select id="leadStatus">
+            <option value="Active">Active</option>
+            <option value="Contacted">Contacted</option>
+            <option value="Proposal">Proposal</option>
+            <option value="Won">Won</option>
+          </select>
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Lead</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
